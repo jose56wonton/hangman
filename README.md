@@ -24,7 +24,8 @@ to load a game or start a new one.
 
 Use `ruby start.rb` to run the project
 
-For more information on [Hangman](https://en.wikipedia.org/wiki/Hangman_(game))
+For more information on [Hangman](https://en.wikipedia.org/wiki/Hangman_(game))   
+
 This project is part of [TheOdinProject's](http://www.theodinproject.com) Ruby track.
 The project itself can be seen [here](https://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization)!
 
