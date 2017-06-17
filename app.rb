@@ -8,26 +8,38 @@ configure do
   set :session_secret, 'secret'
 end
 
+def new_game
+  session[:game] = Hangman.new
+end
+
 get '/' do
-  session[:game] = Hangman.new #if session[:game].nil?
+  new_game if session[:game].nil?
 	@game = session[:game]
-  @correct = @game.get_correct
-  @incorrect = @game.get_incorrect
-  @word = @game.get_word_with_guesses
 
 
-	erb :index
+  erb :index, locals: { correct: @game.get_correct,
+                        incorrect: @game.get_incorrect,
+                        word: @game.get_word_with_guesses,
+                        attempts: @game.attempts}
+
 end
 get '/submit' do
-  session[:game] =Hangman.new if session[:game].nil?
+  new_game if session[:game].nil?
   @guess = params['guess']
   @game = session[:game]
   @game.guess(@guess)
-  @correct = @game.get_correct
-  @incorrect = @game.get_incorrect
-  @word = @game.get_word_with_guesses
+  if(@game.victory?)
+    message = "Nice Job!"
+  elsif(@game.attempts == 0)
+    message = "You are out of guesses my dood!"
+  else
+    message = ""
+  end
+	erb :index, locals: { correct: @game.get_correct,
+                        incorrect: @game.get_incorrect,
+                        word: @game.get_word_with_guesses,
+                        attempts: @game.attempts,
+                        message: message}
 
-
-	erb :index
 
 end

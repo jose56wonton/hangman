@@ -3,19 +3,23 @@
   <body align='center'>
   	<h1>Hangman : Joshua Wootonn</h1>
     <h3>
-        <%= @word %>
+        <%= word %>
     </h3>
     <form action='submit'>
   	  Guess: <input type='text' name='guess' />
   	  <input type='submit' value='Enter' />
 	  </form>
     <p>
-      Correct guesses: <%= @correct %>
+      Correct guesses: <%= correct %>
       </br>
-      Incorrect Guesses: <%= @incorrect %>
+      Incorrect Guesses: <%= incorrect %>
       </br>
-      Guesses Left: <%=   %>
+      Guesses Left: <%= attempts %>
     </p>
+
+    <h3>
+      <%= message %>
+    </h3>
 
   </body>
 </html>

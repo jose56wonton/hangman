@@ -55,6 +55,7 @@ class Hangman
       else
         @incorrect_letters<<guess
       end
+      @attempts-=1
     end
   end
 end
