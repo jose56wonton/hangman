@@ -48,7 +48,7 @@ class Hangman
     end
     temp
   end
-  def guess(letter)
+  def guess(guess)
     if @attempts > 0
       if @word.include?(guess)
         @correct_letters<<guess
