@@ -45,7 +45,7 @@ get '/submit' do
 
 
 end
-get'/reset' do
+get '/reset' do
   new_game
   @game = session[:game]
   message = ""
