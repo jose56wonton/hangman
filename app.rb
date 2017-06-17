@@ -9,24 +9,26 @@ configure do
 end
 
 def new_game
+  session.clear
   session[:game] = Hangman.new
+
 end
 
 get '/' do
   new_game if session[:game].nil?
-	@game = session[:game]
-
-
+  @game = session[:game]
+  message = ""
   erb :index, locals: { correct: @game.get_correct,
                         incorrect: @game.get_incorrect,
                         word: @game.get_word_with_guesses,
-                        attempts: @game.attempts}
+                        attempts: @game.attempts,
+                        message: message}
 
 end
 get '/submit' do
   new_game if session[:game].nil?
-  @guess = params['guess']
   @game = session[:game]
+  @guess = params['guess']
   @game.guess(@guess)
   if(@game.victory?)
     message = "Nice Job!"
@@ -42,4 +44,14 @@ get '/submit' do
                         message: message}
 
 
+end
+get'/reset' do
+  new_game
+  @game = session[:game]
+  message = ""
+  erb :index, locals: { correct: @game.get_correct,
+                        incorrect: @game.get_incorrect,
+                        word: @game.get_word_with_guesses,
+                        attempts: @game.attempts,
+                        message: message}
 end
