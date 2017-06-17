@@ -13,12 +13,13 @@ for this program
 
 * `lib/hangman.rb` hold the hangman class
 
-Use `ruby start.rb` to run the project
+Project is hosted [here](https://guarded-hollows-57111.herokuapp.com/)
 
 For more information on [Hangman](https://en.wikipedia.org/wiki/Hangman_(game))   
 
 This project is part of [TheOdinProject's](http://www.theodinproject.com) Ruby track.
-The project itself can be seen [here](https://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization)!
+These are the project links: [Serialization](https://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization)
+and [Sinatra](https://www.theodinproject.com/courses/ruby-on-rails/lessons/sinatra-project)!
 
 
 
