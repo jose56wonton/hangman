@@ -1,26 +1,17 @@
 # Hangman
 
-This is a command line based game that was designed to work on Serialization.
+Originally this was a command line project that I used to practice Serialization
+If you want to see that project go to commit: 709090c46ac5e40469b36bc83cc26f1646eb3de3
 
-It has 4 files
-* `lib/hangman.rb` is the main source of ruby
-  * `get_random_word` is a method that searches the 5desk.txt file for a word with
-  a length between 5 and 12
-  * `save_dat_game` is a method that serializes the hangman object with the Marshal
-  class
-  * `load_dat_game` is a method that de-serializes the hangman object
-  * `victory?` is returns a boolean that is based on whether you have won or not
-  * `the_loop` is the method that iterated the main functionality of the hangman
-  class. It iterated until you are victorious or until you have killed a man.
+Now it is a web based app that uses sinatra.
+
 
 * `5desk.txt` is a text file that holds 63000 words. Its functionally a dictionary
 for this program
 
-* `saved_game` is that file to which I am saving the hangman object in the case that
-the user request such
+* `app.rb` is where my sinatra routes are held
 
-* `start.rb` is how I am initializing the game. In it the user is given the option
-to load a game or start a new one.
+* `lib/hangman.rb` hold the hangman class
 
 Use `ruby start.rb` to run the project
 

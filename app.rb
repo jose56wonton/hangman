@@ -1,6 +1,5 @@
 require './lib/hangman.rb'
 require 'sinatra'
-require 'sinatra/reloader' if development?
 
 
 configure do
